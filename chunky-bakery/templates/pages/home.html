@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Chunky's Cake Shop | Luxury Dessert Brand{% endblock %}
+
+{% block content %}
+<main class="page page-home">
+    <section class="hero hero-home">
+        <div class="hero-copy reveal">
+            <p class="eyebrow">Luxury Dessert Atelier</p>
+            <h1>Handcrafted cakes that feel editorial, elegant, and unforgettable.</h1>
+            <p class="hero-text">
+                Couture details, refined flavor pairings, and immersive dessert styling for celebrations that deserve more than ordinary.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('main.custom_orders') }}" class="btn btn-primary">Start Custom Order</a>
+                <a href="{{ url_for('main.cakes') }}" class="btn btn-secondary">Explore Cakes</a>
+            </div>
+        </div>
+        <div class="hero-visual reveal">
+            <div class="floating-sculpt floating-sculpt-one"></div>
+            <div class="floating-sculpt floating-sculpt-two"></div>
+            <div class="floating-desserts" aria-hidden="true">
+                <span class="dessert-icon icon-cupcake"></span>
+                <span class="dessert-icon icon-macaron"></span>
+                <span class="dessert-icon icon-sprinkle"></span>
+            </div>
+            <div class="hero-sculpture" aria-hidden="true">
+                <div class="sculpture-layer layer-base"></div>
+                <div class="sculpture-layer layer-middle"></div>
+                <div class="sculpture-layer layer-top"></div>
+                <div class="sculpture-glow"></div>
+                <div class="sculpture-orbit orbit-one"></div>
+                <div class="sculpture-orbit orbit-two"></div>
+                <div class="sculpture-orbit orbit-three"></div>
+            </div>
+            <div class="hero-canvas-card glass-panel">
+                <div id="cake-canvas" class="three-canvas"></div>
+                <div class="hero-card-overlay">
+                    <span>Rose Velvet Signature</span>
+                    <small>Petal finish | soft gold | fresh berry glaze</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="marquee-band">
+        <div class="marquee-track">
+            <span>Luxury cakes</span>
+            <span>Wedding dessert styling</span>
+            <span>Custom celebration centerpieces</span>
+            <span>Hand-finished textures</span>
+            <span>Luxury cakes</span>
+            <span>Wedding dessert styling</span>
+        </div>
+    </section>
+
+    <section class="spotlight-grid section-surface">
+        <article class="spotlight-card glass-panel reveal">
+            <p class="eyebrow">Bespoke Design</p>
+            <h2>Styled for the room, not just the box.</h2>
+            <p>Every cake is designed with the venue palette, florals, and event atmosphere in mind.</p>
+        </article>
+        <article class="spotlight-card glass-panel reveal">
+            <p class="eyebrow">Signature Finish</p>
+            <h2>Texture, glow, and sculptural detail.</h2>
+            <p>We layer soft gloss, pearl accents, and draped buttercream for a couture dessert look.</p>
+        </article>
+    </section>
+
+    <section class="collection-preview section-surface">
+        <div class="section-heading reveal">
+            <p class="eyebrow">Featured Collection</p>
+            <h2>Our most requested celebration cakes</h2>
+        </div>
+        <div class="product-grid">
+            {% for cake in featured_cakes %}
+                <article class="cake-card glass-panel reveal product-card tilt-card">
+                    <div class="cake-card-media">
+                        <img src="{{ url_for('static', filename=cake.image) }}" alt="{{ cake.name }}">
+                    </div>
+                    <div class="cake-card-content">
+                        <div class="cake-card-topline">
+                            <span class="product-category">{{ cake.category }}</span>
+                            <span class="product-price">{{ cake.price }}</span>
+                        </div>
+                        <h3>{{ cake.name }}</h3>
+                        <p>{{ cake.description }}</p>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="process-section section-surface">
+        <div class="section-heading reveal">
+            <p class="eyebrow">Our Process</p>
+            <h2>From concept sketch to dessert centerpiece</h2>
+        </div>
+        <div class="process-grid">
+            {% for step in process_steps %}
+                <article class="process-card glass-panel reveal">
+                    <span class="process-number">0{{ loop.index }}</span>
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}

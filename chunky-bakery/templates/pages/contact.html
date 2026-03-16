@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Chunky's Cake Shop{% endblock %}
+
+{% block content %}
+<main class="page page-contact">
+    <section class="page-hero page-hero-split">
+        <div class="hero-copy reveal">
+            <p class="eyebrow">Contact</p>
+            <h1>Plan your celebration with our cake concierge.</h1>
+            <p class="hero-text">Tell us about your event, guest count, mood, and preferred flavor direction. We will follow up with styling ideas and next steps.</p>
+        </div>
+        <div class="contact-details-card glass-panel reveal">
+            <strong>{{ contact_details.address }}</strong>
+            <span>{{ contact_details.phone }}</span>
+            <span>{{ contact_details.email }}</span>
+            <span>{{ contact_details.hours }}</span>
+        </div>
+    </section>
+
+    <section class="contact-layout section-surface">
+        <div class="contact-form-card glass-panel reveal">
+            <h2>Cake Inquiry</h2>
+            {% include "partials/contact_form.html" %}
+        </div>
+        <div class="contact-side-grid">
+            <article class="contact-feature glass-panel reveal">
+                <h3>Tasting Support</h3>
+                <p>Guided flavor recommendations for weddings, birthdays, and curated gifting.</p>
+            </article>
+            <article class="contact-feature glass-panel reveal">
+                <h3>Delivery Styling</h3>
+                <p>Photo-ready finishing touches and staging notes for dessert tables and centerpieces.</p>
+            </article>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="form-alert form-alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form class="contact-form" action="{{ url_for('main.submit_contact') }}" method="post">
+    <div class="field-group">
+        <input id="contact-name" class="premium-input" type="text" name="name" placeholder=" " required>
+        <label for="contact-name">Name</label>
+    </div>
+    <div class="field-group">
+        <input id="contact-phone" class="premium-input" type="tel" name="phone" placeholder=" " required>
+        <label for="contact-phone">Phone</label>
+    </div>
+    <div class="field-group">
+        <textarea id="contact-message" class="premium-input premium-textarea" name="message" placeholder=" " required></textarea>
+        <label for="contact-message">Message</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+</form>

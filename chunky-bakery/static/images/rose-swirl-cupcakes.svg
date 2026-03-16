@@ -1,0 +1,23 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="640" height="480" rx="36" fill="url(#paint0_linear)"/>
+<ellipse cx="320" cy="392" rx="204" ry="36" fill="#E5C8D5" fill-opacity="0.35"/>
+<g>
+<circle cx="214" cy="176" r="44" fill="#FFD7E4"/>
+<path d="M176 208H252L236 274H192L176 208Z" fill="#D4AF37"/>
+</g>
+<g>
+<circle cx="320" cy="152" r="48" fill="#F8BCD1"/>
+<path d="M278 190H362L346 274H294L278 190Z" fill="#C7982D"/>
+</g>
+<g>
+<circle cx="430" cy="184" r="42" fill="#FFDDE8"/>
+<path d="M394 214H466L452 278H408L394 214Z" fill="#D4AF37"/>
+</g>
+<rect x="154" y="284" width="332" height="24" rx="12" fill="#FFF3E0"/>
+<defs>
+<linearGradient id="paint0_linear" x1="60" y1="22" x2="578" y2="458" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFF7F8"/>
+<stop offset="1" stop-color="#FCE7EF"/>
+</linearGradient>
+</defs>
+</svg>

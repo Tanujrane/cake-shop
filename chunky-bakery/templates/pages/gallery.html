@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery | Chunky's Cake Shop{% endblock %}
+
+{% block content %}
+<main class="page page-gallery">
+    <section class="page-hero page-hero-split">
+        <div class="hero-copy reveal">
+            <p class="eyebrow">Bakery Gallery</p>
+            <h1>Immersive dessert styling, plated sweets, and celebration moments.</h1>
+            <p class="hero-text">A visual archive of cakes, macarons, dessert towers, and editorial-style event tables.</p>
+        </div>
+        <div class="floating-sweets reveal" aria-hidden="true">
+            <div class="sweet sweet-cupcake"></div>
+            <div class="sweet sweet-macaron"></div>
+            <div class="sweet sweet-chocolate"></div>
+        </div>
+    </section>
+
+    <section class="masonry-gallery section-surface reveal">
+        {% for item in gallery_items %}
+            {% set image_url = item.image if item.image.startswith('http') or item.image.startswith('data:') else url_for('static', filename=item.image) %}
+            <button class="gallery-tile tilt-card" data-tilt type="button" data-image="{{ image_url }}" data-title="{{ item.title }}" data-description="{{ item.description }}">
+                <img src="{{ image_url }}" alt="{{ item.title }}">
+                <span class="gallery-overlay">{{ item.title }}</span>
+            </button>
+        {% endfor %}
+    </section>
+
+    <section class="testimonial-row section-surface">
+        {% for testimonial in testimonials %}
+            <article class="testimonial-card glass-panel reveal">
+                <div class="testimonial-rating">5.0</div>
+                <p>{{ testimonial.quote }}</p>
+                <div class="testimonial-meta">
+                    <strong>{{ testimonial.name }}</strong>
+                    <span>{{ testimonial.role }}</span>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+</main>
+
+<div class="lightbox" id="gallery-lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close gallery viewer">x</button>
+    <div class="lightbox-content glass-panel">
+        <img id="lightbox-image" src="" alt="">
+        <div class="lightbox-caption">
+            <strong id="lightbox-title"></strong>
+            <p id="lightbox-description"></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Custom Orders | Chunky's Cake Shop{% endblock %}
+
+{% block content %}
+<main class="page page-custom">
+    <section class="page-hero page-hero-centered">
+        <div class="hero-copy reveal">
+            <p class="eyebrow">Custom Orders</p>
+            <h1>Build a cake concept with live styling cues.</h1>
+            <p class="hero-text">Choose the size, flavor, frosting, and message while the visual preview adapts in real time.</p>
+        </div>
+    </section>
+
+    <section class="customizer-panel glass-panel section-surface reveal">
+        <div class="customizer-form">
+            <div class="field-group">
+                <select id="cake-size" class="premium-input" required>
+                    <option value="" disabled selected></option>
+                    <option value="mini">Mini - 500g</option>
+                    <option value="classic">Classic - 1kg</option>
+                    <option value="grand">Grand - 2kg</option>
+                </select>
+                <label for="cake-size">Cake Size</label>
+            </div>
+
+            <div class="field-group">
+                <select id="cake-flavor" class="premium-input" required>
+                    <option value="" disabled selected></option>
+                    <option value="rose-vanilla">Rose Vanilla</option>
+                    <option value="dark-chocolate">Dark Chocolate</option>
+                    <option value="strawberry-cream">Strawberry Cream</option>
+                    <option value="hazelnut-praline">Hazelnut Praline</option>
+                </select>
+                <label for="cake-flavor">Flavor</label>
+            </div>
+
+            <div class="field-group">
+                <select id="cake-frosting" class="premium-input" required>
+                    <option value="" disabled selected></option>
+                    <option value="silk-buttercream">Silk Buttercream</option>
+                    <option value="whipped-cream">Whipped Cream</option>
+                    <option value="ganache-glaze">Ganache Glaze</option>
+                    <option value="pearl-finish">Pearl Finish</option>
+                </select>
+                <label for="cake-frosting">Frosting Type</label>
+            </div>
+
+            <div class="field-group">
+                <input id="cake-message" class="premium-input" type="text" maxlength="28" placeholder=" ">
+                <label for="cake-message">Message on Cake</label>
+            </div>
+
+            <div class="customizer-summary glass-chip">
+                <div>
+                    <span class="summary-label">Preview Style</span>
+                    <strong id="preview-style">Classic | Rose Vanilla</strong>
+                </div>
+                <div>
+                    <span class="summary-label">Estimated Price</span>
+                    <strong id="preview-price">Rs. 2,800</strong>
+                </div>
+            </div>
+
+            <a href="{{ url_for('main.contact_page') }}" class="btn btn-primary customizer-button">Continue to Inquiry</a>
+        </div>
+
+        <div class="cake-preview-shell">
+            <div class="cake-preview-card glass-chip">
+                <div class="cake-preview-stage" id="cake-preview-stage">
+                    <div class="preview-glow"></div>
+                    <div class="cake-preview" id="cake-preview" aria-label="Live cake preview">
+                        <div class="preview-topper">
+                            <span class="preview-cherry preview-cherry-left"></span>
+                            <span class="preview-cherry preview-cherry-center"></span>
+                            <span class="preview-cherry preview-cherry-right"></span>
+                        </div>
+                        <div class="preview-message" id="preview-message">Sweet Day</div>
+                        <div class="preview-tier preview-tier-top"></div>
+                        <div class="preview-tier preview-tier-bottom"></div>
+                        <div class="preview-drip"></div>
+                        <div class="preview-board"></div>
+                    </div>
+                </div>
+                <div class="preview-caption">
+                    <span id="preview-caption-title">Classic Rose Vanilla</span>
+                    <small id="preview-caption-detail">Silk Buttercream | Personalized message</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-grid section-surface">
+        {% for step in process_steps %}
+            <article class="process-card glass-panel reveal">
+                <span class="process-number">0{{ loop.index }}</span>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+            </article>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}

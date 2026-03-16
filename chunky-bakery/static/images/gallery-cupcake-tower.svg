@@ -1,0 +1,35 @@
+<svg width="720" height="920" viewBox="0 0 720 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="720" height="920" rx="40" fill="url(#paint0_linear)"/>
+<ellipse cx="360" cy="786" rx="220" ry="40" fill="#E7CBD6" fill-opacity="0.36"/>
+<path d="M360 226L462 728H258L360 226Z" fill="#D4AF37"/>
+<g>
+<circle cx="360" cy="224" r="54" fill="#FFD5E5"/>
+<path d="M314 270H406L392 338H328L314 270Z" fill="#C6982A"/>
+</g>
+<g>
+<circle cx="286" cy="386" r="46" fill="#F8BED3"/>
+<path d="M246 424H326L314 484H258L246 424Z" fill="#C6982A"/>
+</g>
+<g>
+<circle cx="434" cy="386" r="46" fill="#FFE2EC"/>
+<path d="M394 424H474L462 484H406L394 424Z" fill="#C6982A"/>
+</g>
+<g>
+<circle cx="240" cy="566" r="42" fill="#FFF1F7"/>
+<path d="M204 598H276L264 652H220L204 598Z" fill="#C6982A"/>
+</g>
+<g>
+<circle cx="360" cy="566" r="44" fill="#FFD0E2"/>
+<path d="M322 602H398L386 658H334L322 602Z" fill="#C6982A"/>
+</g>
+<g>
+<circle cx="480" cy="566" r="42" fill="#F5B9D1"/>
+<path d="M444 598H516L504 652H460L444 598Z" fill="#C6982A"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="66" y1="26" x2="654" y2="876" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFF7F8"/>
+<stop offset="1" stop-color="#FBE8EF"/>
+</linearGradient>
+</defs>
+</svg>

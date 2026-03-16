@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Chunky's Cake Shop{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Luxury bakery website for handcrafted cakes and custom dessert experiences.{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body data-page="{{ page_name }}">
+    <div class="loading-screen" id="loading-screen" aria-hidden="true">
+        <div class="loader-stage">
+            <div class="loader-oven">
+                <div class="loader-cake-core"></div>
+                <div class="loader-cake-glow"></div>
+            </div>
+            <div class="loader-orbit loader-orbit-one"></div>
+            <div class="loader-orbit loader-orbit-two"></div>
+        </div>
+        <p>Preparing the atelier</p>
+    </div>
+
+    <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+
+    <div class="custom-cursor" aria-hidden="true"></div>
+
+    <div class="site-frame">
+        <div class="ambient ambient-left"></div>
+        <div class="ambient ambient-right"></div>
+        <div class="ambient ambient-center"></div>
+        <div class="decorative-blob blob-one"></div>
+        <div class="decorative-blob blob-two"></div>
+        <div class="decorative-blob blob-three"></div>
+
+        <header class="site-header">
+            <div class="navbar glass-panel">
+                <a href="{{ url_for('main.home') }}" class="logo">Chunky's Cake Shop</a>
+                <nav class="nav-menu" aria-label="Primary">
+                    {% for item in nav_items %}
+                        <a href="{{ url_for(item.endpoint) }}" class="{% if request.endpoint == item.endpoint %}is-active{% endif %}">
+                            {{ item.label }}
+                        </a>
+                    {% endfor %}
+                </nav>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        {% include "partials/footer.html" %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js" defer></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</body>
+</html>

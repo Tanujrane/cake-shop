@@ -1,0 +1,21 @@
+<svg width="720" height="560" viewBox="0 0 720 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="720" height="560" rx="38" fill="url(#paint0_linear)"/>
+<g>
+<ellipse cx="210" cy="290" rx="90" ry="48" fill="#F7A8C4"/>
+<rect x="126" y="280" width="168" height="28" rx="14" fill="#FFF3E0"/>
+</g>
+<g>
+<ellipse cx="360" cy="240" rx="94" ry="50" fill="#FFF4E8"/>
+<rect x="272" y="230" width="176" height="28" rx="14" fill="#F0D8B1"/>
+</g>
+<g>
+<ellipse cx="520" cy="310" rx="90" ry="48" fill="#6A4A42"/>
+<rect x="436" y="300" width="168" height="28" rx="14" fill="#A57C6B"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="72" y1="32" x2="648" y2="522" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFF7F7"/>
+<stop offset="1" stop-color="#FDE6EE"/>
+</linearGradient>
+</defs>
+</svg>

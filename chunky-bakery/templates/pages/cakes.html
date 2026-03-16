@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Cakes | Chunky's Cake Shop{% endblock %}
+
+{% block content %}
+<main class="page page-cakes">
+    <section class="page-hero page-hero-split">
+        <div class="hero-copy reveal">
+            <p class="eyebrow">Cake Collection</p>
+            <h1>Statement cakes designed for every type of celebration.</h1>
+            <p class="hero-text">Browse signature styles across birthdays, weddings, chocolate classics, and modern dessert towers.</p>
+        </div>
+        <div class="hero-side-stat glass-panel reveal">
+            <strong data-count="18" data-suffix="+">0</strong>
+            <span>curated luxury cake styles</span>
+        </div>
+    </section>
+
+    <section class="filter-strip reveal">
+        <button class="filter-btn active" type="button" data-filter="all">All Cakes</button>
+        <button class="filter-btn" type="button" data-filter="birthday">Birthday</button>
+        <button class="filter-btn" type="button" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" type="button" data-filter="chocolate">Chocolate</button>
+        <button class="filter-btn" type="button" data-filter="cupcake">Cupcakes</button>
+    </section>
+
+    <section class="product-grid section-surface" id="product-grid">
+        {% for cake in cakes %}
+            {% set category_slug = cake.category|lower %}
+            <article class="cake-card glass-panel reveal product-card tilt-card" data-tilt data-category="{{ category_slug }}">
+                <div class="cake-card-media">
+                    <img src="{{ url_for('static', filename=cake.image) }}" alt="{{ cake.name }}">
+                </div>
+                <div class="cake-card-content">
+                    <div class="cake-card-topline">
+                        <span class="product-category">{{ cake.category }}</span>
+                        <span class="product-price">{{ cake.price }}</span>
+                    </div>
+                    <h3>{{ cake.name }}</h3>
+                    <p>{{ cake.description }}</p>
+                    <div class="product-rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star star-muted">&#9733;</span>
+                        <span class="rating-text">4.8</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="{{ url_for('main.custom_orders') }}" class="btn btn-secondary">Customize</a>
+                        <button type="button" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+
+    <section class="testimonial-row section-surface">
+        {% for testimonial in testimonials %}
+            <article class="testimonial-card glass-panel reveal">
+                <div class="testimonial-rating">5.0</div>
+                <p>{{ testimonial.quote }}</p>
+                <div class="testimonial-meta">
+                    <strong>{{ testimonial.name }}</strong>
+                    <span>{{ testimonial.role }}</span>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}
